@@ -27,77 +27,28 @@ function checkInputs(){
 	const numbers= /^[0-9]+$/;
 	const mixed = /^[0-9a-zA-Z]+$/;
 	
-  if (FirstValue.match(letters)){
-		setSuccess(First);
-			
-    }
-
-    else{
-		Errorset(Fname,'First Name cannot be blank');
-		return false;
-        
-
-    }
-	if (middlevalue.match(letters) ){
-		setSuccess(Mname);
-		
-			
-    }
-	else{
-		Errorset(Mname,'Please insert a valid middle name');
-		return false;
-	}
-   
-	if (lastvalue.match(letters) ){
-		setSuccess(Lname);
-		
-		
-	}
-    else{
-		Errorset(Lname,'Please insert a valid last name');
-		return false;
-    
-    }
-	if (emailValue ===''){
-		Errorset(email,'Email cannot be blank');
-		return false;
-		
-    }
-    else if(!IsEmail(emailValue)){
-        Errorset(email,'Email is invalid');
-		return false;
-    } 
-    else{
+    if (FirstValue.match(letters)) && middlevalue.match(letters) && lastvalue.match(letters) && !IsEmail(emailValue)) && Phonevalue.match(numbers) && Gender.selectedIndex!== 0 && AddValue!== ''){
+        setSuccess(First);
+        setSuccess(Mname);
+        setSuccess(Lname);
         setSuccess(email);
-		
-
-    }
-	if (AddValue!== ''){
-		setSuccess(Add);
-		
-			
-    }
-    else{
-		Errorset(Add,'Address cannot be blank');
-		return false;
+        setSuccess(Add);
+        setSuccess(Phone);
+        setSuccess(Gender);
+        return true;
+        }
         
-    }	
-	if (Phonevalue.match(numbers)){
-		setSuccess(Phone);	
-		
-	}
-    else{
-		Errorset(Phone,'Please insert a valid phone number');
-		return false;
-    }
-	
-	if (Gender.selectedIndex== 0 ){
-		Errorset(Gender,'Please select a gender');
-		return false;
-	}
-	else{
-		setSuccess(Gender);
-	}
+        else{
+        Errorset(Fname,'First Name cannot be blank');
+        Errorset(Mname,'Please insert a valid middle name');
+        Errorset(Lname,'Please insert a valid last name');
+        Errorset(email,'Email cannot be blank');
+        Errorset(Add,'Address cannot be blank');
+        Errorset(Phone,'Please insert a valid phone number');
+        Errorset(Gender,'Please select a gender');
+        return false;
+        
+        }
 }
 
 
