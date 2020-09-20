@@ -27,7 +27,7 @@ function checkInputs(){
 	const numbers= /^[0-9]+$/;
 	const mixed = /^[0-9a-zA-Z]+$/;
 	
-    if (FirstValue.match(letters) && middlevalue.match(letters) && lastvalue.match(letters) && !IsEmail(emailValue) && Phonevalue.match(numbers) && Gender.selectedIndex!== 0 && AddValue!== ''){
+    if ((FirstValue.match(letters)) && (middlevalue.match(letters)) && (lastvalue.match(letters)) && (!IsEmail(emailValue)) && (Phonevalue.match(numbers)) && (Gender.selectedIndex!== 0) && (AddValue!== '')){
         setSuccess(First);
         setSuccess(Mname);
         setSuccess(Lname);
@@ -35,7 +35,7 @@ function checkInputs(){
         setSuccess(Add);
         setSuccess(Phone);
         setSuccess(Gender);
-        
+        return true;
         }
         
         else{
