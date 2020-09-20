@@ -5,12 +5,12 @@
 
 body {
 	background-color: #ffff;
-	font-family: 'Open Sans', sans-serif;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 	margin: 0;
+	font-family:verdana;
 }
 
 .container {
@@ -79,15 +79,6 @@ body {
 	right: 10px;
 }
 
-.form-control.success i.fa-check-circle {
-	color: #2ecc71;
-	visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-	color: #e74c3c;
-	visibility: visible;
-}
 
 .form-control small {
 	color: #e74c3c;
@@ -161,7 +152,7 @@ margin:0;
 padding:0;
 }
 #resumecontainer{
-background-color:white;
+background-color:#C6C6C6;
 text-align:left;
 padding:20px;
 margin:20px auto;
@@ -177,10 +168,12 @@ max-width:1000px;
 }
 select{
 	width:100%;
-	margin:10px;
 }
 
-
+.name1{
+	font-weight:bold;
+	font-size:14;
+}
 
 
 

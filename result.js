@@ -1,0 +1,9 @@
+window.addEventListener('load',()=>{
+    document.getElementById('result-name').innerHTML=sessionStorage.getItem('FNAME');
+    document.getElementById('result-mname').innerHTML=sessionStorage.getItem('MNAME');
+    document.getElementById('result-lname').innerHTML=sessionStorage.getItem('LNAME');
+    document.getElementById('post-add').innerHTML=sessionStorage.getItem('Address');
+    document.getElementById('gend-res').innerHTML=sessionStorage.getItem('Gender');
+    document.getElementById('phone').innerHTML=sessionStorage.getItem('Number');
+    document.getElementById('mail-res').innerHTML=sessionStorage.getItem('Mail');
+});
