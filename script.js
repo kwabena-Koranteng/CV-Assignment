@@ -48,7 +48,7 @@ function checkInputs(){
         Errorset(Gender,'Please select a gender');
         return false;
         
-        }
+    }
 }
 
 
