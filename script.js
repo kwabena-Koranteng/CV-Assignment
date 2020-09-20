@@ -35,7 +35,7 @@ function checkInputs(){
         setSuccess(Add);
         setSuccess(Phone);
         setSuccess(Gender);
-        return true;
+        
         }
         
         else{
