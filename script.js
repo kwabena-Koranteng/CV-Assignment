@@ -17,15 +17,15 @@ window.addEventListener('load',()=>{
 });
 
 function checkInputs(){
-	const FirstValue = Fname.value.trim();
-	const emailValue = email.value.trim();
-	const middlevalue = Mname.value.trim();
-	const lastvalue = Lname.value.trim();
+	const FirstValue = Fname.value;
+	const emailValue = email.value;
+	const middlevalue = Mname.value;
+	const lastvalue = Lname.value;
 	const AddValue = Add.value;
-	const Phonevalue = Phone.value.trim();
-	const GenValue= Gender.value.trim();
-	const letters = /^[A-Za-z]+$/;
-	const numbers= /^[0-9]+$/;
+	const Phonevalue = Phone.value;
+	const GenValue= Gender.value;
+	const letters = /^[A-Za-z ]+$/;
+	const numbers= /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 	const mixed = /^[0-9a-zA-Z]+$/;
 	
 	
