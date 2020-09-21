@@ -7,6 +7,7 @@ const Add = document.getElementById('Add');
 const Phone = document.getElementById('phone');
 const Gender = document.getElementById('gen');
 
+
 window.addEventListener('load',()=>{
 	document.getElementById('result-name').innerHTML=sessionStorage.getItem('NAME');
     document.getElementById('post-add').innerHTML=sessionStorage.getItem('Address');
@@ -27,44 +28,62 @@ function checkInputs(){
 	const numbers= /^[0-9]+$/;
 	const mixed = /^[0-9a-zA-Z]+$/;
 	
-    if ((FirstValue.match(letters)) && (middlevalue.match(letters)) && (lastvalue.match(letters)) && (!IsEmail(emailValue)) && (Phonevalue.match(numbers)) && (Gender.selectedIndex!== 0) && (AddValue!== '')){
-        setSuccess(First);
-        setSuccess(Mname);
-        setSuccess(Lname);
-        setSuccess(email);
-        setSuccess(Add);
-        setSuccess(Phone);
-        setSuccess(Gender);
-        return true;
-        }
-        
-        else{
-        Errorset(Fname,'First Name cannot be blank');
-        Errorset(Mname,'Please insert a valid middle name');
-        Errorset(Lname,'Please insert a valid last name');
-        Errorset(email,'Email cannot be blank');
-        Errorset(Add,'Address cannot be blank');
-        Errorset(Phone,'Please insert a valid phone number');
-        Errorset(Gender,'Please select a gender');
-        return false;
-        
+	
+var missing = false;
+var Fields ="";
+
+if (!FirstValue.match(letters)){
+		missing =true;
+		Fields+="Please enter a valid First name\n"
+			
     }
+	if (!middlevalue.match(letters)){
+		missing = true;
+		Fields+="Please enter a valid Middle Name\n"
+		
+	}
+	  
+	if (!lastvalue.match(letters) ){
+		missing = true;
+		Fields+="Please enter a valid Last Name\n"
+		
+	}
+
+	
+	
+	if (Gender.selectedIndex== 0 ){
+		missing=true;
+		Fields+="Please select a Gender\n"
+	}
+	
+	if (AddValue=== ''){
+		missing =true;
+		Fields+="Please enter a valid Address\n"
+		
+			
+    }
+		
+	if (!Phonevalue.match(numbers)){
+		missing=true;
+		Fields+="Please enter a valid phone number\n"		
+		
+	}
+
+	if (emailValue ==='' ||(!IsEmail(emailValue)) ){
+		missing=true;
+		Fields+="Please enter an email\n"
+		
+    }
+
+	if(missing){
+		alert("Please correct the following error(s) before continuing:\n" + Fields
+		);
+		return false;
+	}
+	return true;
+
 }
 
-
-
-function Errorset(input, message){
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-	small.innerText= message;
-}
-
-function setSuccess(input){
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-
-}
 
 function IsEmail(email){
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ .test(email);
@@ -79,8 +98,9 @@ function handleSubmit(){
 	const GenValue= Gender.value;
 	
 	const n= FirstValue + " " + middlevalue + " " + lastvalue;
+	const names = n.toUpperCase();
 	
-	sessionStorage.setItem('NAME',n);
+	sessionStorage.setItem('NAME',names);
 	sessionStorage.setItem('Mail' , emailValue);
 	sessionStorage.setItem('Address' , AddValue);
 	sessionStorage.setItem('Number' , Phonevalue);
