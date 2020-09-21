@@ -109,6 +109,8 @@ body {
 	font-family: verdana;
 	border-bottom:0.2em solid ;
 	display:flex;
+	color: #fff;
+
 }
 .right {
   position:absolute;
@@ -132,16 +134,20 @@ body {
 p{
 margin:0;
 padding:0;
+color: #fff;
 }
 
 #resumecontainer{
-background-color:#C6C6C6;
+background-color:black;
 text-align:left;
 padding:20px;
 margin:20px auto;
 min-width:300px;
 max-width:600px;
 position:relative;
+border-top:5px solid red;
+border-bottom:10px solid red;
+
 }
 
 #resumecontainer{
@@ -172,7 +178,12 @@ option{
     border-radius: 50%;
     text-align:center;
 }
-
+span{
+	color: #fff;
+}
+li{
+	color: #fff;
+}
 
 
 
